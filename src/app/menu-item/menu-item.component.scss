@@ -1,0 +1,25 @@
+#menuItem {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: "image description";
+
+  height: 300px;
+  gap:4em;
+
+  justify-items: center;
+  align-items: center;
+
+  img {
+    grid-area: image;
+    margin-left: 5px;
+  }
+
+  #content{
+    grid-area: description;
+    align-self: flex-start;
+    a{
+      margin-left: 10px;
+    }
+  }
+
+}
