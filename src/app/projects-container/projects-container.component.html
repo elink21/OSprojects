@@ -1,4 +1,4 @@
 <div id="projectsContainer">
-  <app-menu-item *ngFor="let i of projectNumber"> </app-menu-item>
-
+  <app-menu-item *ngFor="let project of projects" [project]="project">
+  </app-menu-item>
 </div>

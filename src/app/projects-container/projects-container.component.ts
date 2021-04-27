@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects-container.component.scss']
 })
 export class ProjectsContainerComponent implements OnInit {
-  projectNumber=[1,2,3,4,5,6,7,8,9];
+  projects = [{
+    title: "Aws rekognition 📷",
+    subtitle: "Usando JS and Amazon Web Services",
+    description: "Lorem ipsum dolor sit amet",
+  },
+  {
+    title: "Aws rekognition 2",
+    subtitle: "Usando JS and Amazon Web Services",
+    description: "Lorem ipsum dolor sit amet",
+  },
+  ];
   constructor() { }
 
   ngOnInit(): void {
