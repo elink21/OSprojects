@@ -1,4 +1,4 @@
-<mat-card id="createPost">
+<mat-card id="createPost" #createPostContainer>
   <mat-card-title>Agregar proyecto 🆕</mat-card-title>
   <mat-form-field>
     <mat-label>Title</mat-label>
@@ -20,8 +20,12 @@
     <input matInput type="text" />
   </mat-form-field>
 
-  <button (click)="onAddPost()" mat-stroked-button color="primary">
+  <button (click)="animate()" mat-stroked-button color="primary">
     Guardar post 💾
   </button>
-
 </mat-card>
+
+<add-project-button (click)="animate()"></add-project-button>
+
+<div id="greenScreen">
+</div>
