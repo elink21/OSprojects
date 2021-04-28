@@ -1,3 +1,4 @@
+import { Post } from './../models/post.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
