@@ -6,6 +6,16 @@ import { Component } from '@angular/core';
 })
 
 export class PostCreateComponent {
+  title!: string;
+  subtitle!: string;
+  content!: string;
+  gitURL!: string;
+
+
+  onAddPost() {
+    console.log(this.title);
+    this.title = "Something else";
+  }
 
 }
 

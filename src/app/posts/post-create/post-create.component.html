@@ -2,28 +2,26 @@
   <mat-card-title>Agregar proyecto 🆕</mat-card-title>
   <mat-form-field>
     <mat-label>Title</mat-label>
-    <input matInput type="text" />
+    <input matInput type="text" [(ngModel)]="title" />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Subtitle</mat-label>
     <input matInput type="text" />
   </mat-form-field>
-  <br />
+
   <mat-form-field>
-    <textarea
-      matInput
-      name=""
-      id=""
-      cols="30"
-      rows="10"
-      placeholder="Description"
-    ></textarea>
+    <mat-label>Description</mat-label>
+    <textarea matInput name="" id="" cols="30" rows="10"></textarea>
   </mat-form-field>
+
   <mat-form-field>
     <mat-label>Github url</mat-label>
     <input matInput type="text" />
   </mat-form-field>
 
-  <button mat-stroked-button color="primary">Guardar post 💾</button>
+  <button (click)="onAddPost()" mat-stroked-button color="primary">
+    Guardar post 💾
+  </button>
+
 </mat-card>

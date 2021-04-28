@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { ProjectsContainerComponent } from './projects-container/projects-container.component';
 import { AddProjectButtonComponent } from './add-project-button/add-project-button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 //Material components
 import { MatCardModule } from '@angular/material/card';
@@ -27,7 +29,9 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
