@@ -1,15 +1,17 @@
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
-import { MatCardModule } from '@angular/material/card';
 import { ProjectsContainerComponent } from './projects-container/projects-container.component';
+import { AddProjectButtonComponent } from './add-project-button/add-project-button.component';
+
+//Material components
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AddProjectButtonComponent } from './add-project-button/add-project-button.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { AddProjectButtonComponent } from './add-project-button/add-project-butt
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],
