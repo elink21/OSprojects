@@ -1,26 +1,31 @@
+import { PostService } from 'src/app/services/posts.service';
 import { Post } from './../models/post.model';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-projects-container',
   templateUrl: './projects-container.component.html',
   styleUrls: ['./projects-container.component.scss']
 })
-export class ProjectsContainerComponent implements OnInit {
-  projects = [{
-    title: "Aws rekognition 📷",
-    subtitle: "Usando JS and Amazon Web Services",
-    description: "Lorem ipsum dolor sit amet",
-  },
-  {
-    title: "Aws rekognition 2",
-    subtitle: "Usando JS and Amazon Web Services",
-    description: "Lorem ipsum dolor sit amet",
-  },
+export class ProjectsContainerComponent implements OnInit, OnDestroy {
+
+  constructor(public postService: PostService) { }
+  projects: Post[] = [
   ];
-  constructor() { }
+  private postsSub!: Subscription;
 
   ngOnInit(): void {
+    this.projects = this.postService.getPosts();
+    this.postsSub = this.postService.getPostUpdatedListener().
+      subscribe((posts: Post[]) => {
+        this.projects = posts;
+
+      });
   }
+
+  ngOnDestroy(): void {
+    this.postsSub.unsubscribe();
+  }
+
 
 }

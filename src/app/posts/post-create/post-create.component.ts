@@ -1,6 +1,7 @@
 import { Post } from './../../models/post.model';
-import { Component, ViewChild, OnInit, ElementRef, EventEmitter, Output } from '@angular/core';
-
+import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { PostService } from 'src/app/services/posts.service';
 import { gsap } from 'gsap';
 
 @Component({
@@ -11,14 +12,7 @@ import { gsap } from 'gsap';
 
 export class PostCreateComponent implements OnInit {
 
-  title!: string;
-  subtitle!: string;
-  content!: string;
-  gitURL!: string;
-  imageURL!: string;
-
   //Emitters
-  @Output() postAdded = new EventEmitter<Post>();
 
   openButtonPressed = false;
   openFormTL = gsap.timeline();
@@ -52,21 +46,16 @@ export class PostCreateComponent implements OnInit {
     this.openFormTL.pause();
   }
 
-  onAddPost() {
-    console.log(this.title);
-    const post: Post = {
-      title: this.title,
-      subtitle: this.subtitle,
-      content: this.content,
-      gitURL: this.gitURL,
-      imageURL: this.imageURL
-    }
-    this.postAdded.emit(post);
+  constructor(public postService:PostService){
+
+  }
+
+  onAddPost(form: NgForm) {
+    this.postService.addPost(form.value.title,form.value.subtitle,
+       form.value.content,form.value.gitURL,form.value.imageURL);
   }
 
   animate() {
-
-
     this.openButtonPressed = !this.openButtonPressed;
     if (this.openButtonPressed) {
       console.log("animation");

@@ -1,3 +1,4 @@
+import { Post } from './../models/post.model';
 import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent implements OnInit {
-  @Input() project!: any;
+  @Input() project!: Post;
 
   constructor() { }
 

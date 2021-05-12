@@ -1,31 +1,45 @@
 <mat-card id="createPost" #createPostContainer>
   <mat-card-title>Agregar proyecto 🆕</mat-card-title>
-  <mat-form-field>
-    <mat-label>Title</mat-label>
-    <input matInput type="text" [(ngModel)]="title" />
-  </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Subtitle</mat-label>
-    <input matInput type="text" />
-  </mat-form-field>
+  <form action="" id="postForm" #postForm="ngForm" (ngSubmit)="onAddPost(postForm)">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput ngModel type="text" name="title" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Description</mat-label>
-    <textarea matInput name="" id="" cols="30" rows="10"></textarea>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Subtitle</mat-label>
+      <input matInput ngModel type="text" name="subtitle" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Github url</mat-label>
-    <input matInput type="text" />
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        ngModel
+        name="content"
+        id=""
+        cols="30"
+        rows="10"
+      ></textarea>
+    </mat-form-field>
 
-  <button (click)="animate()" mat-stroked-button color="primary">
-    Guardar post 💾
-  </button>
+    <mat-form-field>
+      <mat-label>Github url</mat-label>
+      <input ngModel name="gitURL" matInput type="text" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input ngModel name="imageURL" matInput type="text" />
+    </mat-form-field>
+
+    <button type="submit" mat-stroked-button color="primary">
+      Guardar post 💾
+    </button>
+  </form>
 </mat-card>
 
 <add-project-button (click)="animate()"></add-project-button>
 
-<div id="greenScreen">
-</div>
+<div id="greenScreen"></div>

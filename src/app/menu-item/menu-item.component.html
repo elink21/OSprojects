@@ -1,5 +1,5 @@
 <mat-card id="menuItem">
-  <img mat-card-image src="https://source.unsplash.com/random/800x600" />
+  <img mat-card-image src={{project.imageURL}} />
 
   <div id="content">
     <mat-card-title id="title">
@@ -7,12 +7,11 @@
     </mat-card-title>
 
     <mat-card-subtitle>
-      Tecnologia: Amazon Web Services + JS
+      {{project.subtitle}}
     </mat-card-subtitle>
 
     <mat-card-content>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
-      inventore?
+      {{project.content}}
     </mat-card-content>
 
     <mat-card-actions>
@@ -20,7 +19,7 @@
         <button mat-raised-button color="accent">Go to live project 👁</button>
       </a>
 
-      <a href="#">
+      <a href={{project.gitURL}} target="_blank">
         <button mat-raised-button color="primary">Github code 🐱‍👤</button>
       </a>
     </mat-card-actions>
